@@ -1,0 +1,1564 @@
+
+/* ============================================
+   0. REGLAS GENERALES Y NAVEGACIÓN
+   ============================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#ul ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* ============================================
+   1. RESET & VARIABLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+  --bio-bg: #edf4fb;
+  --bio-title: #c13d15;
+  --bio-text: #4a5568;
+  --bio-btn-bg: #e64a19;
+  --bio-btn-hover: #c83e12;
+  --bio-boton: #15559c;
+  --bio-boton-footer: #14283b;
+}
+
+/* ============================================
+   2. FUENTES
+   ============================================ */
+@font-face {
+  font-family: 'Poppins';
+  src: url('Font/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Font/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('Font/Fraunces-Italic-VariableFont_SOFT\,WONK\,opsz\,wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('Font/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-color: #F7F5F1;
+  font-family: var(--font-poppins);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-family: 'Fraunces', sans-serif;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   3. MENÚ Y HEADER
+   ============================================ */
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F7F5F1;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+  display: block;
+  max-width: 180px;
+}
+.logo-link{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+#ul ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+#ul ul li a {
+  text-decoration: none;
+  color: #504f4f;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+#ul ul li a.menu-items.active,
+#ul ul li a:hover {
+  color: #e64a19;
+  border-bottom: 2px solid #e64a19;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #504f4f;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================
+   NUEVO DISCO - TRANSFORMACIÓN
+   ============================================ */
+
+
+.contenedor-vinilo-info {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 50px;
+  margin: 140px auto 60px auto;
+  margin-top: 0;     
+    padding-top: 40px;
+  background-color: #EAF1F6;
+}
+
+/* === TEXTO E INFORMACIÓN === */
+#info {
+  flex: 1;
+  max-width: 550px;
+  text-align: left;
+}
+
+
+#album{
+  color: #555555;
+}
+
+#surge {
+  color: #e64a19;
+  font-size: clamp(0.85rem, 1.5vw, 0.8rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  
+}
+
+#info h2 {
+font-family: 'Fraunces', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  color: #09090a;
+  font-weight: 800;
+  line-height: 1.1;
+
+}
+
+.texto-descripcion {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555555;
+  margin-top: 0.5rem;
+
+}
+#iconos{
+  display: flex;
+  justify-content:baseline;
+  align-items:self-start;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+#iconos p{
+  font-family:'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+}
+
+/* Botón "Escuchar Ahora" */
+
+.btn-transformacion{
+margin-top: 25px;
+
+
+}
+.boton {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: transparent;
+  color: var(--bio-text);
+  border: 1px solid var(--bio-text);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.boton:hover {
+  background-color: var(--bio-boton-footer, #14283b);
+  color: #ffffff;
+  border-color: var(--bio-boton-footer, #14283b);
+  transform: translateY(-2px);
+}
+
+
+.btn-container {
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #e64a19;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(230, 74, 25, 0.3);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  background-color: #c83e12;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(230, 74, 25, 0.45);
+}
+
+/* === DISCO Y VINILO === */
+ #vinilo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.disco-wrapper {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+.disco-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+/* Tapa del disco por encima */
+ .tapa {
+  z-index: 500;
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 85%; /* Mantiene proporción adecuada para dejar espacio al vinilo */
+  height: auto;
+  
+  box-shadow: -10px 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Vinilo base */
+.vinilo {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 85%;
+  height: auto;
+  z-index: 1;
+  transform: translateX(25%);
+}
+
+
+/* === RESPONSIVE (MÓVILES) === */
+@media (max-width: 850px) {
+  .contenedor-vinilo-info {
+    flex-direction: column;
+    margin-top: 100px;
+  }
+
+  #info {
+    max-width: 100%;
+  }
+
+  .disco-wrapper {
+    max-width: 350px;
+  }
+}
+
+/* Pagina Disco*/
+.spotify-container {
+  margin-top: 140px;
+  margin-bottom: 40px;
+  padding: 0 5%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.spotify-container > div {
+  flex: 1 1 280px;
+  max-width: 380px;
+  min-width: 260px;
+}
+
+.spotify-container iframe {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ============================================
+   SECCIÓN EVENTOS - CONTENIDO PRINCIPAL
+   ============================================ */
+
+#eventos {
+  margin-top: 120px;
+  padding: 0 20px 60px 20px;
+  box-sizing: border-box;
+}
+
+#eventos h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-family: 'Fraunces', sans-serif;
+  color: #e64a19;
+  font-size: clamp(1rem, 4vw, 1.8rem);
+  letter-spacing: 1px;
+}
+
+.events-list {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+}
+
+/* Fila del evento con separación por línea inferior */
+.event-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 16px;
+}
+
+.event-row:first-child {
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Información del evento */
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.event-date {
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--bio-boton-footer, #15559c);
+  font-family: 'Poppins', sans-serif;
+}
+
+.event-location, 
+.event-venue {
+  font-size: 0.95rem;
+  color: #111111;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Acciones y Botones */
+.event-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-shrink: 0; /* Evita que los botones se deformen en pantallas medianas */
+}
+
+.event-btn {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+/* Botón Outline (RECORDAR) */
+.event-btn-outline {
+  background-color: transparent;
+  color: #e64a19;
+  border: 1px solid #e64a19;
+}
+
+.event-btn-outline:hover {
+  background-color: #c83e12;
+  color: #ffffff;
+  border-color: #c83e12;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(230, 74, 25, 0.45);
+}
+
+/* Botón Sólido (TICKETS) */
+.event-btn-solid {
+  background-color: #e64a19;
+  color: #ffffff;
+  border: 1px solid #e64a19;
+  box-shadow: 0 4px 10px rgba(230, 74, 25, 0.3);
+}
+
+.event-btn-solid:hover {
+  background-color: #c83e12;
+  border-color: #c83e12;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(230, 74, 25, 0.45);
+}
+
+/* ============================================
+   RESPONSIVE - EVENTOS (PANTALLAS PEQUEÑAS)
+   ============================================ */
+@media (max-width: 600px) {
+  #eventos {
+    margin-top: 60px;
+  }
+
+  .event-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  .event-actions {
+    width: 100%;
+    display: flex;
+  }
+
+  .event-btn {
+    flex: 1; /* Cada botón ocupa el 50% del ancho en celular */
+  }
+}
+/* ============================================
+   SECCIÓN BIO - CONTENIDO PRINCIPAL
+   ============================================ */
+
+/* Contenedor Grid Principal */
+.bio-container {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  background-color: var(--bio-bg, transparent);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  margin: 100px auto 0 auto;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------
+   COLUMNA IZQUIERDA: IMÁGENES SUPERPUESTAS
+   -------------------------------------------- */
+.bio-media {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bio-image-wrapper {
+  position: relative;
+  width: 85%;
+}
+
+/* Foto principal */
+.bio-main-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Elemento flotante (Cuaderno / Bocetos) */
+.bio-floating-art {
+  position: absolute;
+  bottom: -25px;
+  right: -12%;
+  width: 48%;
+  height: auto;
+  transform: rotate(-3deg);
+  border-radius: 4px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.bio-floating-art:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+/* --------------------------------------------
+   COLUMNA DERECHA: TEXTOS Y TIPOGRAFÍA
+   -------------------------------------------- */
+.bio-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Línea decorativa superior */
+.bio-accent-line {
+  display: block;
+  width: 32px;
+  height: 3px;
+  background-color: var(--bio-title, #15559c);
+  margin-bottom: 0.75rem;
+}
+
+/* Título Principal */
+.bio-title {
+  font-family: 'Fraunces', sans-serif;
+  color: var(--bio-btn-bg, #15559c);
+  font-size: clamp(0.9rem, 3.5vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.10;
+  letter-spacing: 0.5px;
+  margin: 0 0 0.3rem 0;
+  text-transform: uppercase;
+}
+
+/* Subtítulo */
+.bio-subtitle {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  color: var(--bio-boton-footer, #f6501e);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Párrafos de biografía */
+.bio-text {
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  color: var(--bio-text, #687177);
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+/* Botón Call to Action */
+.bio-btn {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 12px;
+  background-color: #e64a19;
+  color: #ffffff;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: 6px;
+  margin-top: 0.8rem;
+  box-shadow: 0 4px 10px rgba(230, 74, 25, 0.3);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.bio-btn:hover {
+  background-color: #c83e12;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(230, 74, 25, 0.45);
+}
+
+.bio-btn span {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ============================================
+   RESPONSIVE MEDIA QUERIES (TABLETS Y MÓVILES)
+   ============================================ */
+@media (max-width: 900px) {
+  .bio-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    padding: 2.5rem 1.5rem;
+    margin-top: 60px;
+  }
+
+  .bio-image-wrapper {
+    width: 80%;
+  }
+
+  .bio-floating-art {
+    right: -5%;
+    width: 42%;
+  }
+
+  .bio-content {
+    text-align: center;
+  }
+
+  .bio-text {
+    text-align: center;
+  }
+
+  .bio-btn {
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .bio-container {
+    margin-top: 90px;
+    padding: 1.5rem 1rem;
+    gap: 2.5rem;
+  }
+
+  .bio-image-wrapper {
+    width: 90%;
+  }
+
+  .bio-floating-art {
+    right: 0;
+    bottom: -15px;
+    width: 45%;
+  }
+}
+/* ============================================
+   4. HOME / HERO SECTION
+   ============================================ */
+#section1home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  width: fit-content;
+  max-width: 90%;
+  margin: 120px auto 0 auto;
+  padding-bottom: 30px;
+}
+
+#texto {
+  width: auto;
+  max-width: 340px;
+  flex-shrink: 0;
+}
+
+#fotodiego {
+  width: auto;
+  max-width: 460px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 1;
+}
+
+#fotodiego img {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+}
+
+#texto h3 {
+  color: #D94A20;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.4rem, 1.2vw, 0.7rem);
+  letter-spacing: 0.1em;
+}
+
+#texto #h21, #texto #h22 {
+  font-family: 'Fraunces', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+#texto #h21 { color: #15559c; margin-bottom: 0; }
+#texto #h22 { color: #D94A20; margin-top: 0; }
+
+#texto #contp,
+#texto p {
+  max-width: 28ch;
+}
+
+#texto p {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  margin-top: 0.6rem;
+  color: #687177;
+}
+
+/* ============================================
+   SECTION DISCO (TRANSFORMACIÓN)
+   ============================================ */
+#sectiondisco {
+  width: 100%;
+  margin: 4rem auto;
+}
+
+.contenedor-vinilo-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+#vinilo, #info {
+  width: 50%;
+}
+
+.disco-container {
+  display: flex;
+  align-items: center;
+}
+
+.tapa, .vinilo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================
+   08. TRAYECTORIA
+   ============================================ */
+#trayectoria {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding-bottom: 2rem;
+}
+
+#textotrayectoria {
+  width: 35%;
+}
+
+#textotrayectoria #h2trayectoria {
+  font-family: 'Fraunces', sans-serif;
+  color: var(--bio-boton-footer, #15559c);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.1;
+  margin-bottom: 2%;
+}
+
+#textotrayectoria h3 {
+  color: #D94A20;
+  font-family: 'Fraunces', sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  letter-spacing: 0.1rem;
+}
+
+#contp {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.85rem, 1.5vw, 0.9rem);
+  margin-top: 1rem;
+  color: #687177;
+}
+
+.btn-historia {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: transparent;
+  border: 1px solid var(--bio-title, #15559c);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.btn-historia .historia {
+  text-decoration: none;
+  color: var(--bio-title, #15559c);
+  transition: color 0.3s;
+}
+
+.btn-historia:hover {
+  background-color: var(--bio-title, #c13d15);
+  border-color: var(--bio-title, #c13d15);
+  transform: translateY(-2px);
+}
+
+.btn-historia:hover .historia {
+  color: #ffffff;
+}
+
+#trayectoria .iconos {
+  width: 20%;
+  border-left: solid 1px #687177;
+  padding-left: 18px;
+}
+
+#trayectoria .iconos h3 {
+  color: var(--bio-boton-footer, #15559c);
+  font-family: 'Fraunces', sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  margin-bottom: 0.5rem;
+}
+
+#trayectoria .iconos p {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.8rem, 1.2vw, 0.85rem);
+  color: #687177;
+}
+
+/* ============================================
+   9. DISCOGRAFÍA
+   ============================================ */
+#todosDiscos {
+  background-color: #e8e3e3;
+  padding: 40px 5%;
+}
+
+#titulo {
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+}
+
+section #titulo h3 {
+  color: #D94A20;
+  font-family: 'Fraunces', sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+section #titulo h2 {
+  font-family: 'Fraunces', sans-serif;
+  color: var(--bio-boton-footer, #15559c);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+#discografía {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tarjeta-disco {
+  display: flex;
+  width: calc(33.333% - 1rem);
+  min-width: 280px;
+  gap: 15px;
+  background-color: #F7F5F1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+  padding: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 769px) {
+  .tarjeta-disco:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+    z-index: 1;
+  }
+}
+
+.discos img {
+  width: 110px;
+  height: auto;
+  object-fit: cover;
+}
+
+.textoDiscografia h3 {
+  font-family: 'Fraunces', sans-serif;
+  color: var(--bio-boton-footer, #15559c);
+  font-size: 1.1rem;
+  margin: 0 0 0.3rem 0;
+}
+
+.textoDiscografia p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  color: #687177;
+  margin: 0.3rem 0;
+}
+
+.btn-play a.play {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--bio-title);
+  font-size: 0.8rem;
+  transition: color 0.25s, transform 0.2s;
+}
+
+.btn-play a.play:hover {
+  color: var(--bio-btn-bg, #e64a19);
+  transform: translateX(3px);
+}
+
+.btn-play a.play img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+}
+
+.btn-play a.play:hover img {
+  transform: scale(1.1);
+}
+
+
+/* ============================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================ */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 12px 20px;
+  }
+
+  .logo {
+    height: 56px;
+  }
+
+  #section1home {
+    gap: 2.5rem;
+    max-width: 95%;
+  }
+
+  #texto {
+    max-width: 300px;
+  }
+
+  #fotodiego,
+  #fotodiego img {
+    max-width: 380px;
+  }
+
+  .contenedor-vinilo-info {
+    gap: 2rem;
+    padding: 40px 5%;
+  }
+
+  #info h2 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+  }
+
+  #trayectoria {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  #textotrayectoria {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #trayectoria .iconos {
+    width: calc(33.333% - 1rem);
+  }
+
+  .tarjeta-disco {
+    width: calc(50% - 0.75rem);
+  }
+
+  .spotify-container {
+    margin-top: 120px;
+  }
+
+  #sect1 .informacionVinilo {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .bio-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    padding: 2.5rem 1.5rem;
+    margin-top: 80px;
+  }
+
+  .bio-image-wrapper {
+    width: 80%;
+  }
+
+  .bio-floating-art {
+    right: -5%;
+    width: 42%;
+  }
+
+  .bio-content {
+    text-align: center;
+  }
+
+  .bio-text {
+    text-align: center;
+  }
+
+  .bio-btn {
+    align-self: center;
+  }
+
+  .contenedor-vinilo-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #vinilo,
+  #info {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #info {
+    text-align: center;
+  }
+
+  #iconos {
+    justify-content: center;
+  }
+
+  .btn-transformacion {
+    display: flex;
+    justify-content: center;
+  }
+
+  .disco-wrapper {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .spotify-container > div {
+    max-width: 100%;
+  }
+
+  #sect1 .informacionVinilo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #infodisco {
+    max-width: 100%;
+  }
+}
+
+/* Celulares y tablets chicas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-container {
+    position: relative;
+    padding: 10px 16px;
+  }
+
+  .logo {
+    height: 48px;
+  }
+
+  #ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #F7F5F1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0 1.25rem;
+  }
+
+  #ul.is-open {
+    display: block;
+  }
+
+  #ul ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  #ul ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  #ul ul li a {
+    display: block;
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  #ul ul li a.menu-items.active,
+  #ul ul li a:hover {
+    border-bottom: none;
+    background-color: rgba(230, 74, 25, 0.08);
+  }
+
+  #section1home {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 92%;
+    max-width: 520px;
+    margin-top: 100px;
+    padding: 1rem 0 2rem;
+    gap: 1.5rem;
+  }
+
+  #texto,
+  #fotodiego {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  #texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #texto h3,
+  #texto #h21,
+  #texto #h22 {
+    text-align: center;
+    width: 100%;
+  }
+
+  #texto #h21,
+  #texto #h22 {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+  }
+
+  #texto #contp,
+  #texto p {
+    max-width: 34ch;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  #texto p br,
+  .texto-descripcion br,
+  #textotrayectoria br {
+    display: none;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contenedor-vinilo-info {
+    flex-direction: column;
+    margin: 2rem auto;
+    padding: 2.5rem 1.25rem;
+    gap: 1.5rem;
+  }
+
+  #vinilo,
+  #info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .vinilo {
+    transform: translateX(15%);
+  }
+
+  #trayectoria {
+    flex-direction: column;
+    align-items: stretch;
+    width: 92%;
+    margin: 3rem auto;
+    text-align: center;
+  }
+
+  #textotrayectoria {
+    width: 100%;
+  }
+
+  #trayectoria .iconos {
+    width: 100%;
+    border-left: none;
+    border-top: solid 1px #687177;
+    padding-left: 0;
+    padding-top: 1.25rem;
+    text-align: center;
+  }
+
+  .btn-historia {
+    display: inline-block;
+  }
+
+  #todosDiscos {
+    padding: 32px 4%;
+  }
+
+  #titulo {
+    text-align: center;
+  }
+
+  .tarjeta-disco {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  #discografía {
+    justify-content: center;
+  }
+
+  .spotify-container {
+    margin-top: 110px;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4%;
+  }
+
+  .spotify-container > div {
+    width: 100%;
+    max-width: 480px;
+    min-width: 0;
+  }
+
+  #eventos {
+    margin-top: 100px;
+    padding: 0 16px 48px;
+  }
+
+  .event-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .event-actions {
+    width: 100%;
+  }
+
+  .event-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  #sect1 {
+    padding: 110px 5% 40px;
+  }
+
+  #pie {
+    flex-direction: column;
+    text-align: center;
+    padding: 36px 20px;
+    gap: 1.75rem;
+  }
+
+  #pie img.logo {
+    width: 8rem;
+    height: auto;
+  }
+
+  #navegacionPie ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  #follow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  #section1home {
+    margin-top: 90px;
+    gap: 1.25rem;
+  }
+
+  #texto h3 {
+    font-size: 0.55rem;
+  }
+
+  .tarjeta-disco {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .discos img {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .btn-play a.play {
+    justify-content: center;
+  }
+
+  .bio-container {
+    margin-top: 70px;
+    padding: 1.5rem 1rem;
+    gap: 2.5rem;
+  }
+
+  .bio-image-wrapper {
+    width: 92%;
+  }
+
+  .bio-floating-art {
+    right: 0;
+    bottom: -15px;
+    width: 45%;
+  }
+
+  .event-actions {
+    flex-direction: column;
+  }
+
+  .event-btn {
+    width: 100%;
+  }
+
+  .disco-wrapper {
+    max-width: 260px;
+  }
+
+  #info h2 {
+    font-size: 1.7rem;
+  }
+}
+
+/* ============================================
+   FOOTER - RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  #pie {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px 24px;
+    gap: 1.5rem 2rem;
+    text-align: center;
+  }
+
+  #navegacionPie,
+  #follow,
+  #derechos {
+    flex: 1 1 180px;
+  }
+}
+/* ============================================
+   SECCIÓN ADN DISCO - TRANSFORMACIÓN
+   ============================================ */
+
+#sect1 {
+  padding: 120px 5% 60px;
+  margin-top: 0;
+}
+
+#sect1 .informacionVinilo {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+#infodisco {
+  flex: 1 1 320px;
+  max-width: 560px;
+}
+
+#infodisco p {
+  font-family: 'Poppins', sans-serif;
+  color: var(--bio-text);
+}
+
+#infodisco h2 {
+  font-family: 'Fraunces', sans-serif;
+  color: var(--bio-btn-bg);
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  margin-bottom: 1rem;
+}
+
+#tapavinilo {
+  flex: 1 1 260px;
+  width: 100%;
+  max-width: 420px;
+}
+
+#tapavinilo .tapa {
+  width: 100%;
+  right: auto;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.boton-tapa {
+  text-decoration: none;
+  margin-top: 1.5rem;
+  display: inline-block;
+  color: var(--bio-title);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 12px 28px;
+  border: 1px solid var(--bio-title);
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.boton-tapa:hover,
+a.boton-tapa:hover {
+  background-color: var(--bio-btn-bg, #e64a19);
+  color: #ffffff;
+  border-color: var(--bio-btn-bg, #e64a19);
+  transform: translateY(-2px);
+}
+/* ============================================
+   10. FOOTER
+   ============================================ */
+#pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 50px;
+  background-color: var(--bio-boton-footer);
+  color: #f4f0ee;
+}
+
+#pie img { width: 10rem; height: auto; }
+
+#follow p { margin-bottom: 0.5rem; font-size: 0.85rem; }
+
+#pie a img { width: 22px; height: auto; margin: 0 4px; }
+
+#navegacionPie ul { list-style: none; }
+
+#navegacionPie ul li a {
+  text-decoration: none;
+  color: #f4f0ee;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+#pie #derechos {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
